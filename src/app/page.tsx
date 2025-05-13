@@ -1,10 +1,5 @@
-import { Button } from "@/components/ui/button";
+import Layout from "./(with-layout)/layout";
 
 export default function Home() {
-  return (
-    <div>
-      <h1>CodeLab</h1>
-      <Button>Button</Button>
-    </div>
-  );
+  return <Layout>Teste</Layout>;
 }
