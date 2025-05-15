@@ -1,6 +1,6 @@
 "use client";
 
-import { usePreferencesStore } from "@/stores/preferences.store";
+import { usePreferencesStore } from "@/stores/preferences";
 import dynamic from "next/dynamic";
 
 const VideoPlayer = dynamic(() => import("./video-player"), { ssr: false });

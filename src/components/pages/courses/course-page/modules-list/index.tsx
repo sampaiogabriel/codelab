@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ModuleItem } from "./module-item";
-import { usePreferencesStore } from "@/stores/preferences.store";
+import { usePreferencesStore } from "@/stores/preferences";
 import { Button } from "@/components/ui/button";
 import { PanelRightOpen } from "lucide-react";
 import { useEffect, useRef } from "react";
@@ -20,7 +20,7 @@ export const ModulesList = ({ modules }: ModulesListProps) => {
   const params = useParams();
 
   const courseSlug = params.slug as string;
-  const moduleId = modules[0].id;
+  const moduleId = params.moduleId as string;
 
   const {
     expandedModule,
