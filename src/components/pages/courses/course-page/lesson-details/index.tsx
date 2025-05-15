@@ -1,4 +1,5 @@
 import { LessonPlayer } from "./lesson-player";
+import { LessonComments } from "./comments";
 
 type LessonDetailsProps = {
   lesson: CourseLesson;
@@ -13,7 +14,7 @@ export const LessonDetails = ({ lesson, nextLesson }: LessonDetailsProps) => {
       <div className="p-6 flex flex-col gap-6">
         <p className="text-muted-foreground">{lesson.description}</p>
 
-        {/* LessonComments */}
+        <LessonComments />
       </div>
     </>
   );
