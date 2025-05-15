@@ -12,6 +12,7 @@ import { createLessonComment } from "@/actions/course-comments";
 import { queryKeys } from "@/constants/query-keys";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
+import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 const formSchema = z.object({
   content: z
@@ -65,7 +66,10 @@ export const CommentInput = () => {
 
   return (
     <form className="flex gap-4" onSubmit={handleSubmit(onSubmit)}>
-      <Avatar src={user?.imageUrl} fallback={user?.fullName} />
+      <Avatar>
+        <AvatarImage src={user?.imageUrl} />
+        <AvatarFallback>{user?.fullName}</AvatarFallback>
+      </Avatar>
 
       <Controller
         control={control}
