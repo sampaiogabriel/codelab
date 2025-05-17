@@ -1,6 +1,6 @@
 "use client";
 
-// import "react-credit-cards-2/dist/es/styles-compiled.css";
+import "react-credit-cards-2/dist/es/styles-compiled.css";
 
 import { Button } from "@/components/ui/button";
 import { Dialog } from "@/components/ui/dialog";
@@ -93,7 +93,11 @@ export const CheckoutDialog = ({
           )}
 
           {step === 2 && paymentMethod === "CREDIT_CARD" && (
-            <CreditCardForm onBack={handleBack} />
+            <CreditCardForm
+              onBack={handleBack}
+              course={course}
+              onClose={handleClose}
+            />
           )}
 
           {step === 2 && paymentMethod === "PIX" && (
