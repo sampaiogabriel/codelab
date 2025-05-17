@@ -9,7 +9,11 @@ import { z } from "zod";
 
 type FormData = z.infer<typeof creditCardCheckoutFormSchema>;
 
-export const CreditCardForm = () => {
+type CreditCardFormProps = {
+  onBack: () => void;
+};
+
+export const CreditCardForm = ({ onBack }: CreditCardFormProps) => {
   const form = useForm<FormData>({
     resolver: zodResolver(creditCardCheckoutFormSchema),
     defaultValues: {

@@ -1,5 +1,7 @@
 "use client";
 
+import "react-credit-cards-2/dist/es/styles-compiled.css";
+
 import { Button } from "@/components/ui/button";
 import { Dialog } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
@@ -7,6 +9,7 @@ import { ArrowRight, CreditCard } from "lucide-react";
 import { useState } from "react";
 import PixIcon from "@/assets/pix.svg";
 import { CreditCardForm } from "./credit-card";
+import { PixForm } from "./pix";
 
 type CheckoutDialogProps = {
   open: boolean;
@@ -41,6 +44,10 @@ export const CheckoutDialog = ({
     // TODO: validar se já esta logado
 
     setStep(2);
+  };
+
+  const handleBack = () => {
+    setStep(1);
   };
 
   return (
@@ -81,9 +88,13 @@ export const CheckoutDialog = ({
             </div>
           )}
 
-          {step === 2 && paymentMethod === "CREDIT_CARD" && <CreditCardForm />}
+          {step === 2 && paymentMethod === "CREDIT_CARD" && (
+            <CreditCardForm onBack={handleBack} />
+          )}
 
-          {step === 2 && paymentMethod === "PIX" && <>{/* PixForm */}</>}
+          {step === 2 && paymentMethod === "PIX" && (
+            <PixForm onBack={handleBack} course={course} />
+          )}
         </div>
       }
     />
