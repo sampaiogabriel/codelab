@@ -16,3 +16,5 @@ https://sandbox.asaas.com/dashboard/home
 https://docs.asaas.com/
 
 Add tbm no sandbox.asaas
+
+url webhook /api/webhooks/asaas
