@@ -1,4 +1,4 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { cn, formatName } from "@/lib/utils";
 import { formatDistanceToNow } from "date-fns";
@@ -24,9 +24,7 @@ export const AdminCommentItem = ({ comment }: AdminCommentItemProps) => {
       )}
     >
       <div className="flex items-center gap-4">
-        <Avatar>
-          <AvatarImage src={user?.imageUrl as string} />
-        </Avatar>
+        <Avatar src={user?.imageUrl as string} />
         <div className="flex-1">
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <p>{formatName(user.firstName, user.lastName)}</p>

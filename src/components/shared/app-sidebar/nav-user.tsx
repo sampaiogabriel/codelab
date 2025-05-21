@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -21,6 +21,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { BadgeCheck, ChevronsUpDown, LogIn, LogOut } from "lucide-react";
 import Link from "next/link";
+import { NotificationsPopover } from "./notifications-popover";
 import { cn } from "@/lib/utils";
 
 export const NavUser = () => {
@@ -45,10 +46,7 @@ export const NavUser = () => {
                   size="lg"
                   className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                 >
-                  <Avatar>
-                    <AvatarImage src={user.imageUrl} />
-                    <AvatarFallback>{user.fullName} </AvatarFallback>
-                  </Avatar>
+                  <Avatar src={user.imageUrl} fallback={user.fullName} />
                   <div className="grid flex-1 text-left text-sm leading-tight">
                     <span className="truncate font-semibold">
                       {user.fullName}
@@ -68,11 +66,7 @@ export const NavUser = () => {
               >
                 <DropdownMenuLabel className="p-0 font-normal">
                   <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                    <Avatar>
-                      <AvatarImage src={user.imageUrl} />
-                      <AvatarFallback>{user.fullName} </AvatarFallback>
-                    </Avatar>
-
+                    <Avatar src={user.imageUrl} fallback={user.fullName} />
                     <div className="grid flex-1 text-left text-sm leading-tight">
                       <span className="truncate font-semibold">
                         {user.fullName}
@@ -99,6 +93,8 @@ export const NavUser = () => {
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
+
+            <NotificationsPopover />
           </div>
         ) : (
           <>

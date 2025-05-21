@@ -1,6 +1,5 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useUser } from "@clerk/nextjs";
@@ -13,6 +12,7 @@ import { queryKeys } from "@/constants/query-keys";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { Avatar } from "@/components/ui/avatar";
 
 const formSchema = z.object({
   content: z
@@ -83,10 +83,7 @@ export const CommentInput = ({
       className={cn("flex gap-4", className)}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <Avatar>
-        <AvatarImage src={user?.imageUrl} />
-        <AvatarFallback>{user?.fullName}</AvatarFallback>
-      </Avatar>
+      <Avatar src={user?.imageUrl} fallback={user?.fullName} />
 
       <Controller
         control={control}

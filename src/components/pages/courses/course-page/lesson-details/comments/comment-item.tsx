@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Tooltip } from "@/components/ui/tooltip";
 import { cn, formatName } from "@/lib/utils";
@@ -82,10 +82,7 @@ export const CommentItem = ({
     >
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <Avatar>
-            <AvatarImage src={user.imageUrl as string} />
-            <AvatarFallback>{authorName}</AvatarFallback>
-          </Avatar>
+          <Avatar src={user?.imageUrl} fallback={authorName} />
 
           <p>{authorName}</p>
 
