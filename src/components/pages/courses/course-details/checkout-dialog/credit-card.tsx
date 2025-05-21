@@ -3,7 +3,7 @@ import { FormField } from "@/components/ui/form/field";
 import { InputField } from "@/components/ui/form/input-field";
 import { Form } from "@/components/ui/form/primitives";
 import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select/primitives";
+import { Select } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { creditCardCheckoutFormSchema } from "@/server/schemas/payment";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -199,7 +199,7 @@ export const CreditCardForm = ({
               {({ field }) => (
                 <Select
                   value={String(field.value)}
-                  onChange={(value: any) => field.onChange(Number(value))}
+                  onChange={(value) => field.onChange(Number(value))}
                   options={installmentsOptions}
                   placeholder="Parcelas"
                 />
