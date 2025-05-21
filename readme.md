@@ -2,6 +2,8 @@
 
 A fullstack platform for educational content management and delivery, featuring authentication, payments, and AI integration.
 
+![CodeLab](./CodeLab.png)
+
 ## 📚 About the Project
 
 **CodeLab** is an educational platform that allows you to:
