@@ -9,7 +9,12 @@ import { Tooltip } from "@/components/ui/tooltip";
 import { formatPrice, formatStatus } from "@/lib/utils";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
-import { Pencil, Send, Trash } from "lucide-react";
+import { Archive, Pencil, Send, Trash } from "lucide-react";
+import Link from "next/link";
+import { useMutation } from "@tanstack/react-query";
+import { deleteCourse, updateCourseStatus } from "@/actions/courses";
+import { toast } from "sonner";
+import { AlertDialog } from "@/components/ui/alert-dialog";
 
 type CoursesTableProps = {
   courses: CourseWithTagsAndModules[];
@@ -17,6 +22,22 @@ type CoursesTableProps = {
 
 export const CoursesTable = ({ courses }: CoursesTableProps) => {
   const [search, setSearch] = useState("");
+
+  const { mutateAsync: handleDeleteCourse, isPending: isDeletingCourse } =
+    useMutation({
+      mutationFn: deleteCourse,
+      onSuccess: () => toast.success("Curso deletado com sucesso!"),
+      onError: () => toast.error("Erro ao deletar curso!"),
+    });
+
+  const { mutate: handleUpdateCourseStatus, isPending: isUpdatingStatus } =
+    useMutation({
+      mutationFn: updateCourseStatus,
+      onSuccess: () => {
+        toast.success("Status do curso atualizado com sucesso!");
+      },
+      onError: () => toast.error("Erro ao atualizar status do curso!"),
+    });
 
   const columns: ColumnDef<CourseWithTagsAndModules>[] = [
     {
@@ -102,23 +123,54 @@ export const CoursesTable = ({ courses }: CoursesTableProps) => {
     {
       header: "",
       accessorKey: "actions",
-      cell: () => {
+      cell: ({ row }) => {
+        const course = row.original;
+        const status = course.status;
+
+        const isPublished = status === "PUBLISHED";
+
         return (
           <div className="flex items-center gap-2 justify-end">
-            <Tooltip content="Alterar status para Publicado">
-              <Button variant="outline" size="icon">
-                <Send />
+            <Tooltip
+              content={`Alterar status para ${
+                isPublished ? "Rascunho" : "Publicado"
+              }`}
+            >
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() =>
+                  handleUpdateCourseStatus({
+                    courseId: course.id,
+                    status: isPublished ? "DRAFT" : "PUBLISHED",
+                  })
+                }
+                disabled={isUpdatingStatus}
+              >
+                {isPublished ? <Archive /> : <Send />}
               </Button>
             </Tooltip>
             <Tooltip content="Editar curso">
-              <Button variant="outline" size="icon">
-                <Pencil />
-              </Button>
+              <Link passHref href={`/admin/courses/edit/${course.id}`}>
+                <Button variant="outline" size="icon">
+                  <Pencil />
+                </Button>
+              </Link>
             </Tooltip>
             <Tooltip content="Excluir curso">
-              <Button variant="outline" size="icon">
-                <Trash />
-              </Button>
+              <AlertDialog
+                title="Excluir curso"
+                description="Tem certeza que deseja excluir este curso? Essa ação não pode ser revertida."
+                onConfirm={() => handleDeleteCourse(course.id)}
+              >
+                <Button
+                  variant="outline"
+                  size="icon"
+                  disabled={isDeletingCourse}
+                >
+                  <Trash />
+                </Button>
+              </AlertDialog>
             </Tooltip>
           </div>
         );
