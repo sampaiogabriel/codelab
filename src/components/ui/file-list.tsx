@@ -1,200 +1,174 @@
 "use client";
 
+import * as React from "react";
 import { FileText } from "lucide-react";
 import prettyBytes from "pretty-bytes";
-import * as React from "react";
 
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { cn } from "@/lib/utils";
 
-function FileList({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="file-list"
-      className={cn("grid gap-4", className)}
-      {...props}
-    />
-  );
-}
+export const FileList = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("grid gap-4", className)} {...props} />
+));
+FileList.displayName = "FileList";
 
-function FileListItem({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="file-list-item"
-      className={cn(
-        "bg-card text-card-foreground grid gap-4 rounded-xl border p-4 shadow",
-        className
-      )}
-      {...props}
-    />
-  );
-}
+export const FileListItem = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "grid gap-4 rounded-xl border bg-card p-4 text-card-foreground shadow",
+      className
+    )}
+    {...props}
+  />
+));
+FileListItem.displayName = "FileListItem";
 
-function FileListHeader({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="file-list-header"
-      className={cn("flex items-center gap-4", className)}
-      {...props}
-    />
-  );
-}
+export const FileListHeader = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center gap-4", className)}
+    {...props}
+  />
+));
+FileListHeader.displayName = "FileListHeader";
 
-function FileListIcon({
-  className,
-  children,
-  ...props
-}: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="file-list-icon"
-      className={cn(
-        "bg-muted text-muted-foreground flex size-10 items-center justify-center rounded-lg border [&>svg:not([class*='size-'])]:size-5",
-        className
-      )}
-      {...props}
-    >
-      {children ?? <FileText />}
-    </div>
-  );
-}
+export const FileListIcon = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, children, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "flex size-10 items-center justify-center rounded-lg border bg-muted text-muted-foreground [&>svg]:size-5",
+      className
+    )}
+    {...props}
+  >
+    {children ?? <FileText />}
+  </div>
+));
+FileListIcon.displayName = "FileListIcon";
 
-function FileListInfo({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="file-list-info"
-      className={cn("grid flex-1 gap-1", className)}
-      {...props}
-    />
-  );
-}
+export const FileListInfo = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("grid flex-1 gap-1", className)} {...props} />
+));
+FileListInfo.displayName = "FileListInfo";
 
-function FileListName({ className, ...props }: React.ComponentProps<"p">) {
-  return (
-    <p
-      data-slot="file-list-name"
-      className={cn(
-        "text-sm leading-none font-medium tracking-tight",
-        className
-      )}
-      {...props}
-    />
-  );
-}
+export const FileListName = React.forwardRef<
+  React.ElementRef<"p">,
+  React.ComponentPropsWithoutRef<"p">
+>(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("text-sm font-medium leading-none tracking-tight", className)}
+    {...props}
+  />
+));
+FileListName.displayName = "FileListName";
 
-function FileListDescription({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="file-list-description"
-      className={cn(
-        "text-muted-foreground flex items-center gap-2 text-xs",
-        className
-      )}
-      {...props}
-    />
-  );
-}
+export const FileListDescription = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "flex items-center gap-2 text-xs text-muted-foreground",
+      className
+    )}
+    {...props}
+  />
+));
+FileListDescription.displayName = "FileListDescription";
 
-function FileListDescriptionSeparator({
-  children,
-  ...props
-}: React.ComponentProps<"span">) {
-  return (
-    <span data-slot="file-list-description-separator" {...props}>
-      {children ?? "•"}
-    </span>
-  );
-}
+export const FileListDescriptionSeparator = React.forwardRef<
+  React.ElementRef<"span">,
+  React.ComponentPropsWithoutRef<"span">
+>(({ children, ...props }, ref) => (
+  <span ref={ref} {...props}>
+    {children ?? "•"}
+  </span>
+));
+FileListDescriptionSeparator.displayName = "FileListDescriptionSeparator";
 
-interface FileListSizeProps extends React.ComponentProps<"span"> {
+export interface FileListSizeProps
+  extends React.ComponentPropsWithoutRef<"span"> {
   children: number;
 }
 
-function FileListSize({ children, ...props }: FileListSizeProps) {
-  return (
-    <span data-slot="file-list-size" {...props}>
-      {prettyBytes(children)}
-    </span>
-  );
-}
+export const FileListSize = React.forwardRef<
+  React.ElementRef<"span">,
+  FileListSizeProps
+>(({ children, ...props }, ref) => (
+  <span ref={ref} {...props}>
+    {prettyBytes(children)}
+  </span>
+));
+FileListSize.displayName = "FileListSize";
 
-function FileListProgress({
-  className,
-  ...props
-}: React.ComponentProps<typeof Progress>) {
-  return (
-    <Progress
-      data-slot="file-list-progress"
-      className={cn("h-1", className)}
-      {...props}
-    />
-  );
-}
+export const FileListProgress = React.forwardRef<
+  React.ElementRef<typeof Progress>,
+  React.ComponentPropsWithoutRef<typeof Progress>
+>(({ className, ...props }, ref) => (
+  <Progress ref={ref} className={cn("h-1", className)} {...props} />
+));
+FileListProgress.displayName = "FileListProgress";
 
-function FileListDescriptionText({
-  className,
-  ...props
-}: React.ComponentProps<"span">) {
-  return (
-    <span
-      data-slot="file-list-description-text"
-      className={cn(
-        "flex items-center gap-1.5 [&>svg:not([class*='size-'])]:size-3",
-        className
-      )}
-      {...props}
-    />
-  );
-}
+export const FileListDescriptionText = React.forwardRef<
+  React.ElementRef<"span">,
+  React.ComponentPropsWithoutRef<"span">
+>(({ className, ...props }, ref) => (
+  <span
+    ref={ref}
+    className={cn("flex items-center gap-1.5 [&>svg]:size-3", className)}
+    {...props}
+  />
+));
+FileListDescriptionText.displayName = "FileListDescriptionText";
 
-function FileListContent(props: React.ComponentProps<"div">) {
-  return <div data-slot="file-list-content" {...props} />;
-}
+export const FileListContent = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>((props, ref) => <div ref={ref} {...props} />);
+FileListContent.displayName = "FileListContent";
 
-function FileListActions({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="file-list-actions"
-      className={cn("flex items-center gap-2", className)}
-      {...props}
-    />
-  );
-}
+export const FileListActions = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center gap-2", className)}
+    {...props}
+  />
+));
+FileListActions.displayName = "FileListActions";
 
-function FileListAction({
-  className,
-  variant = "outline",
-  size = "icon",
-  ...props
-}: React.ComponentProps<typeof Button>) {
-  return (
-    <Button
-      data-slot="file-list-action"
-      variant={variant}
-      size={size}
-      className={cn("size-7 [&_svg:not([class*='size-'])]:size-3.5", className)}
-      {...props}
-    />
-  );
-}
-
-export {
-  FileList,
-  FileListItem,
-  FileListHeader,
-  FileListIcon,
-  FileListInfo,
-  FileListName,
-  FileListDescription,
-  FileListDescriptionSeparator,
-  FileListSize,
-  FileListProgress,
-  FileListDescriptionText,
-  FileListContent,
-  FileListActions,
-  FileListAction,
-};
+export const FileListAction = React.forwardRef<
+  React.ElementRef<typeof Button>,
+  React.ComponentPropsWithoutRef<typeof Button>
+>(({ className, variant = "outline", size = "icon", ...props }, ref) => (
+  <Button
+    ref={ref}
+    variant={variant}
+    size={size}
+    className={cn("size-7 [&_svg]:size-3.5", className)}
+    type="button"
+    {...props}
+  />
+));
+FileListAction.displayName = "FileListAction";

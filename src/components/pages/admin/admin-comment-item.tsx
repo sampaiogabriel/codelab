@@ -24,7 +24,7 @@ export const AdminCommentItem = ({ comment }: AdminCommentItemProps) => {
       )}
     >
       <div className="flex items-center gap-4">
-        <Avatar src={user?.imageUrl as string} />
+        <Avatar src={user.imageUrl} />
         <div className="flex-1">
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <p>{formatName(user.firstName, user.lastName)}</p>

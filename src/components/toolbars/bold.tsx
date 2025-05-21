@@ -11,6 +11,10 @@ import {
 } from "@/components/ui/tooltip/primitives";
 import { cn } from "@/lib/utils";
 import { useToolbar } from "@/components/toolbars/toolbar-provider";
+import type { Extension } from "@tiptap/core";
+import type { StarterKitOptions } from "@tiptap/starter-kit";
+
+export type StarterKitExtensions = Extension<StarterKitOptions, any>;
 
 const BoldToolbar = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, onClick, children, ...props }, ref) => {

@@ -1,5 +1,6 @@
 "use client";
 
+import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useUser } from "@clerk/nextjs";
@@ -12,7 +13,6 @@ import { queryKeys } from "@/constants/query-keys";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { Avatar } from "@/components/ui/avatar";
 
 const formSchema = z.object({
   content: z

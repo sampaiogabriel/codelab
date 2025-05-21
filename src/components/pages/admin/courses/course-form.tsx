@@ -17,7 +17,7 @@ import { Editor } from "@/components/ui/editor";
 import { FormField } from "@/components/ui/form/field";
 import { InputField } from "@/components/ui/form/input-field";
 import { Form } from "@/components/ui/form/primitives";
-import { SelectField } from "@/components/ui/form/select-filed";
+import { SelectField } from "@/components/ui/form/select-field";
 import MultipleSelector, { Option } from "@/components/ui/multiple-selector";
 import { Separator } from "@/components/ui/separator";
 import { queryKeys } from "@/constants/query-keys";

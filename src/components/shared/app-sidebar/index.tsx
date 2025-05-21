@@ -30,7 +30,7 @@ export const AppSidebar = ({ ...props }: AppSidebarProps) => {
       <SidebarFooter>
         <NavUser />
       </SidebarFooter>
-      <SidebarRail></SidebarRail>
+      <SidebarRail />
     </Sidebar>
   );
 };

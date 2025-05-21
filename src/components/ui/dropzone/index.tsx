@@ -41,7 +41,7 @@ export const Dropzone = ({
     <DropzoneRoot
       accept={accept}
       maxSize={5 * 1024 * 1024} // 5MB
-      onDropAccepted={(files: any) => setFile(files[0])}
+      onDropAccepted={(files) => setFile(files[0])}
     >
       <div className="flex flex-col gap-4">
         <DropzoneZone>

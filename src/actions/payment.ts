@@ -70,9 +70,8 @@ export const createPixCheckout = async (payload: PixCheckoutSchema) => {
 
   if (!customerId) {
     const { data: newCustomer } = await asaasApi.post("/customers", {
-      name:
-        name ?? formatName(user?.firstName as string, user?.lastName as string),
-      email: user?.email,
+      name: name ?? formatName(user.firstName, user.lastName),
+      email: user.email,
       cpfCnpj: cpf,
       postalCode,
       addressNumber,
@@ -170,9 +169,8 @@ export const createCreditCardCheckout = async (
 
   if (!customerId) {
     const { data: newCustomer } = await asaasApi.post("/customers", {
-      name:
-        name ?? formatName(user?.firstName as string, user?.lastName as string),
-      email: user?.email,
+      name: name ?? formatName(user.firstName, user.lastName),
+      email: user.email,
       cpfCnpj: cpf,
       postalCode,
       addressNumber,
@@ -225,7 +223,7 @@ export const createCreditCardCheckout = async (
     },
     creditCardHolderInfo: {
       name,
-      email: user?.email,
+      email: user.email,
       cpfCnpj: cpf,
       postalCode,
       addressNumber,

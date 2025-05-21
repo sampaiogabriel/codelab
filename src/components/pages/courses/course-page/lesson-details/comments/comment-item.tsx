@@ -82,7 +82,7 @@ export const CommentItem = ({
     >
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <Avatar src={user?.imageUrl} fallback={authorName} />
+          <Avatar src={user.imageUrl} fallback={authorName} />
 
           <p>{authorName}</p>
 

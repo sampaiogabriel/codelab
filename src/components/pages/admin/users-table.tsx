@@ -42,7 +42,7 @@ export const UsersTable = ({ users }: UsersTableProps) => {
 
         return (
           <div className="flex items-center gap-2 p-2">
-            <Avatar src={user.imageUrl as string} fallback={fullName} />
+            <Avatar src={user.imageUrl} fallback={fullName} />
             <p className="font-medium">{fullName}</p>
           </div>
         );

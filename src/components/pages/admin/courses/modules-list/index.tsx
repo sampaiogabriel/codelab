@@ -62,7 +62,7 @@ export const ModulesList = () => {
       {!!fields.length && (
         <DragDropContext onDragEnd={handleDragEnd}>
           <Droppable droppableId="modules">
-            {(provided: any) => (
+            {(provided) => (
               <div
                 {...provided.droppableProps}
                 ref={provided.innerRef}
@@ -74,7 +74,7 @@ export const ModulesList = () => {
                     draggableId={`module-item-${field._id}`}
                     index={index}
                   >
-                    {(provided: any) => (
+                    {(provided) => (
                       <div
                         {...provided.draggableProps}
                         ref={provided.innerRef}
