@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        hostname: "pub-90bdaeba3a894660b7a997ae854dc4e3.r2.dev",
+      },
+    ],
+  },
   turbopack: {
     rules: {
       "*.svg": {
