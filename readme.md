@@ -1,6 +1,7 @@
 # CodeLab
 
-A fullstack platform for educational content management and delivery, featuring authentication, payments, and AI integration.
+A fullstack platform designed for educational content creation, management, and delivery. It supports multi-role access (admins and students), with features such as user authentication and payment integration.
+Administrators can create and manage courses, upload and organize lessons, moderate comments, and manage user accounts, while students can access course content, post questions, and interact within lessons.
 
 ![CodeLab](./CodeLab.png)
 
