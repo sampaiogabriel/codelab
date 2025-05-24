@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "pub-90bdaeba3a894660b7a997ae854dc4e3.r2.dev",
       },
+      {
+        hostname: "images.unsplash.com",
+      },
     ],
   },
   turbopack: {

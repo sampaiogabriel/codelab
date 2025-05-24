@@ -20,15 +20,15 @@ import { useState } from "react";
 
 const navItems = [
   {
-    name: "Features",
-    link: "#features",
+    name: "Cursos",
+    link: "#courses",
   },
   {
-    name: "Pricing",
-    link: "#pricing",
+    name: "Depoimentos",
+    link: "#testimonials",
   },
   {
-    name: "Contact",
+    name: "Contato",
     link: "#contact",
   },
 ];
@@ -62,6 +62,7 @@ export function NavbarDemo() {
               <Link href="/platform">
                 <Button variant="default" size="sm" className="rounded-full">
                   Acesse a Plataforma
+                  <LogIn />
                 </Button>
               </Link>
 
@@ -114,6 +115,7 @@ export function NavbarDemo() {
             <div className="flex gap-4">
               <Link href="/platform" className="rounded-full">
                 <Button variant="default" size="sm">
+                  <LogIn />
                   Acesse a Plataforma
                 </Button>
               </Link>

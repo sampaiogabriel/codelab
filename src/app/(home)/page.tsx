@@ -1,9 +1,9 @@
 import { NavbarDemo } from "@/components/pages/home/navbar";
 import { Metadata } from "next";
 
-import { TextReveal } from "@/components/magicui/text-reveal";
 import HeroSection from "@/components/pages/home/hero-section";
 import TextSection from "@/components/pages/home/text-section";
+import TestimonialsSection from "@/components/pages/home/testimonials";
 
 export const metadata: Metadata = {
   title: "Cursos",
@@ -18,7 +18,8 @@ export default async function HomePage() {
       </div>
 
       <HeroSection />
-      <TextSection />
+      {/* <TextSection /> */}
+      <TestimonialsSection />
     </>
   );
 }

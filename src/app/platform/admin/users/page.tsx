@@ -1,8 +1,8 @@
-import { getAdminUsers } from "@/actions/user";
+import { getUsers } from "@/actions/user";
 import { UsersTable } from "@/components/pages/platform/admin/users-table";
 
 export default async function AdminUsersPage() {
-  const users = await getAdminUsers();
+  const users = await getUsers();
 
   return (
     <>
