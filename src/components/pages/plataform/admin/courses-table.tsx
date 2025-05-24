@@ -151,7 +151,7 @@ export const CoursesTable = ({ courses }: CoursesTableProps) => {
               </Button>
             </Tooltip>
             <Tooltip content="Editar curso">
-              <Link passHref href={`plataform/admin/courses/edit/${course.id}`}>
+              <Link passHref href={`platform/admin/courses/edit/${course.id}`}>
                 <Button variant="outline" size="icon">
                   <Pencil />
                 </Button>
