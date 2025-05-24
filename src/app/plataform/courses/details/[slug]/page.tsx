@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
-import { CourseProgress } from "@/components/pages/courses/course-details/course-progress";
+import { CourseProgress } from "@/components/pages/plataform/courses/course-details/course-progress";
 import { BackButton } from "@/components/ui/back-button";
 import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";

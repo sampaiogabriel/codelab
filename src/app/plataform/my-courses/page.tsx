@@ -1,5 +1,5 @@
 import { getPurchasedCoursesWithDetails } from "@/actions/courses";
-import { CourseItem } from "@/components/pages/courses/courses-list/course-item";
+import { CourseItem } from "@/components/pages/plataform/courses/courses-list/course-item";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

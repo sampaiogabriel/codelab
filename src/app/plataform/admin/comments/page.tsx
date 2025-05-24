@@ -1,5 +1,5 @@
 import { getAdminComments } from "@/actions/course-comments";
-import { AdminCommentItem } from "@/components/pages/admin/admin-comment-item";
+import { AdminCommentItem } from "@/components/pages/plataform/admin/admin-comment-item";
 
 export default async function AdminCommentsPage() {
   const comments = await getAdminComments();

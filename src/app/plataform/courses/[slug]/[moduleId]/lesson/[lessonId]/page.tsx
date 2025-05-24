@@ -1,7 +1,7 @@
 import { getCourse, getPurchasedCourses } from "@/actions/courses";
-import { LessonDetails } from "@/components/pages/courses/course-page/lesson-details";
-import { ModulesList } from "@/components/pages/courses/course-page/modules-list";
-import { TopDetails } from "@/components/pages/courses/course-page/top-details";
+import { LessonDetails } from "@/components/pages/plataform/courses/course-page/lesson-details";
+import { ModulesList } from "@/components/pages/plataform/courses/course-page/modules-list";
+import { TopDetails } from "@/components/pages/plataform/courses/course-page/top-details";
 import { notFound, redirect } from "next/navigation";
 
 type CoursePageProps = {

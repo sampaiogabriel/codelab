@@ -1,5 +1,5 @@
 import { getCourse } from "@/actions/courses";
-import { CourseForm } from "@/components/pages/admin/courses/course-form";
+import { CourseForm } from "@/components/pages/plataform/admin/courses/course-form";
 import { notFound } from "next/navigation";
 
 type EditCoursePageProps = {
