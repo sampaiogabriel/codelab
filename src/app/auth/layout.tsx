@@ -15,7 +15,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
         "min-h-max px-6 py-10"
       )}
     >
-      <Link href="/" className="block w-full max-w-[200px]">
+      <Link href="/plataform" className="block w-full max-w-[200px]">
         <Logo />
       </Link>
 

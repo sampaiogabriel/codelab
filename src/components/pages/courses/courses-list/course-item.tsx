@@ -17,8 +17,8 @@ export const CourseItem = ({
       className="border rounded-lg bg-card overflow-hidden hover:border-primary transition-all"
       href={
         redirectTo === "details"
-          ? `/courses/details/${course.slug}`
-          : `/courses/${course.slug}`
+          ? `plataform/courses/details/${course.slug}`
+          : `plataform/courses/${course.slug}`
       }
     >
       <Image

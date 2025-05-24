@@ -12,7 +12,7 @@ export default async function AdminCoursesPage() {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold">Cursos</h1>
 
-        <Link passHref href="/admin/courses/create">
+        <Link passHref href="plataform/admin/courses/create">
           <Button>
             Adicionar curso
             <Plus />

@@ -57,7 +57,7 @@ export const CourseProgress = ({ course }: CourseProgressProps) => {
             <p className="text-xs">{progress}%</p>
           </div>
 
-          <Link passHref href={`/courses/${course.slug}`}>
+          <Link passHref href={`plataform/courses/${course.slug}`}>
             <Button className="w-full mt-4 text-xl font-bold h-auto text-white py-3">
               {progress > 0 ? "Continuar assistindo" : "Começar agora"}
               <Play />

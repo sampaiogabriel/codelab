@@ -87,7 +87,7 @@ export const NavItems = () => {
     return items.map((item) => (
       <SidebarMenuItem key={item.label}>
         <SidebarMenuButton asChild tooltip={item.label}>
-          <Link href={item.path}>
+          <Link href={`/plataform/${item.path}`}>
             <item.icon className="text-primary group-data-[collapsible=icon]:text-white hover:text-primary transition-all" />
             <span>{item.label}</span>
           </Link>
