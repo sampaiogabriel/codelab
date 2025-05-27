@@ -1,5 +1,5 @@
 import { getRanking } from "@/actions/ranking";
-import { RankingTable } from "@/components/pages/plataform/ranking/ranking-table";
+import { RankingTable } from "@/components/pages/platform/ranking/ranking-table";
 import { Crown } from "lucide-react";
 import { Metadata } from "next";
 

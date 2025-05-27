@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import createGlobe from "cobe";
 import { cn } from "@/lib/utils";
 
@@ -69,13 +69,14 @@ const Earth: React.FC<EarthProps> = ({
     return () => {
       globe.destroy();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dark]);
 
   return (
     <div
       className={cn(
         "z-[10] mx-auto flex w-full max-w-[350px] items-center justify-center",
-        className,
+        className
       )}
     >
       <canvas

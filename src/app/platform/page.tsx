@@ -1,5 +1,5 @@
-import { CoursesList } from "@/components/pages/plataform/courses/courses-list";
-import { CourseTagsList } from "@/components/pages/plataform/courses/tags-list";
+import { CoursesList } from "@/components/pages/platform/courses/courses-list";
+import { CourseTagsList } from "@/components/pages/platform/courses/tags-list";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Metadata } from "next";
 import { Suspense } from "react";

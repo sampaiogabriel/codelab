@@ -1,5 +1,5 @@
 import { getNewUsersStats, getPurchasedCoursesStats } from "@/actions/stats";
-import { StatsCharts } from "@/components/pages/plataform/admin/stats-charts";
+import { StatsCharts } from "@/components/pages/platform/admin/stats-charts";
 
 export const dynamic = "force-dynamic";
 
