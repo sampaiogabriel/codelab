@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import HeroSection from "@/components/pages/home/hero-section";
 import TextSection from "@/components/pages/home/text-section";
 import TestimonialsSection from "@/components/pages/home/testimonials";
+import Footer from "@/components/pages/home/footer";
 
 export const metadata: Metadata = {
   title: "Cursos",
@@ -16,10 +17,10 @@ export default async function HomePage() {
       <div className="h-[64px] w-full bg-background">
         <NavbarDemo />
       </div>
-
       <HeroSection />
-      {/* <TextSection /> */}
+      <TextSection />
       <TestimonialsSection />
+      <Footer />
     </>
   );
 }

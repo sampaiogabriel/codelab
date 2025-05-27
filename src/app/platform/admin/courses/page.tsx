@@ -1,5 +1,5 @@
 import { getAdminCourses } from "@/actions/courses";
-import { CoursesTable } from "@/components/pages/platform/admin/courses-table";
+import { CoursesTable } from "@/components/pages/plataform/admin/courses-table";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export default async function AdminCoursesPage() {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold">Cursos</h1>
 
-        <Link passHref href="platform/admin/courses/create">
+        <Link href="/platform/admin/courses/create">
           <Button>
             Adicionar curso
             <Plus />

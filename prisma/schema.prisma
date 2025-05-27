@@ -25,6 +25,7 @@ model User {
   lessonComments   LessonComment[]
   courses          CoursePurchase[]
   notifications    Notification[]
+  Testimonials     Testimonial[]
 
   @@map("users")
 }
@@ -189,4 +190,19 @@ model Notification {
   updatedAt DateTime @updatedAt
 
   @@map("notifications")
+}
+
+model Testimonial {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  content   String
+  published Boolean
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("testimonials")
 }

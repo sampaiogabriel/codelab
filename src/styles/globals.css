@@ -99,6 +99,9 @@
 
   --plyr-color-main: var(--primary);
   --plyr-border-radius: 0px;
+
+  --font-nunito: "Nunito", sans-serif;
+  --font-dm: "DM Sans", sans-serif;
 }
 
 @layer base {

@@ -19,10 +19,11 @@ import {
 } from "@/components/ui/sidebar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useClerk, useUser } from "@clerk/nextjs";
-import { BadgeCheck, ChevronsUpDown, LogIn, LogOut } from "lucide-react";
+import { BadgeCheck, ChevronsUpDown, LogIn, LogOut, Star } from "lucide-react";
 import Link from "next/link";
 import { NotificationsPopover } from "./notifications-popover";
 import { cn } from "@/lib/utils";
+import { redirect } from "next/navigation";
 
 export const NavUser = () => {
   const { user, isLoaded } = useUser();
@@ -82,6 +83,15 @@ export const NavUser = () => {
                   <DropdownMenuItem onClick={() => openUserProfile()}>
                     <BadgeCheck />
                     Gerenciar conta
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem
+                    onClick={() => redirect(`/platform/testimonials`)}
+                  >
+                    <Star />
+                    Gostou da plataforma?
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />

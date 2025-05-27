@@ -3,7 +3,7 @@ import { FC } from "react";
 
 const TextSection: FC = () => {
   return (
-    <section className="w-full bg-background max-h-screen">
+    <section className="w-full bg-background min-h-screen">
       <div className="w-full max-w-7xl mx-auto flex justify-center">
         <TextReveal>
           Combinamos os métodos de ensino mais modernos com a experiência de

@@ -19,6 +19,7 @@ import {
   SquareDashedBottomCode,
   Trophy,
   Users,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -75,6 +76,11 @@ export const NavItems = () => {
       label: "Gerenciar Usuários",
       path: "/admin/users",
       icon: Users,
+    },
+    {
+      label: "Gerenciar Depoimentos",
+      path: "/admin/testimonials",
+      icon: Star,
     },
     {
       label: "Gerenciar Comentários",
