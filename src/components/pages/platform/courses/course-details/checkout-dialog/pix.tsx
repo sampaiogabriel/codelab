@@ -167,7 +167,7 @@ export const PixForm = ({ onBack, onClose, course }: PixFormProps) => {
 
         await new Promise((resolve) => setTimeout(resolve, 4000));
 
-        router.push(`/courses/${course.slug}`);
+        router.push(`/platform/courses/${course.slug}`);
         break;
     }
   };

@@ -102,7 +102,7 @@ export const createLessonComment = async ({
             user.firstName,
             user.lastName
           )} respondeu ao seu comentário no curso "${course.title}"`,
-          link: `/courses/${courseSlug}/${lesson.moduleId}/lesson/${lessonId}`,
+          link: `/platform/courses/${courseSlug}/${lesson.moduleId}/lesson/${lessonId}`,
         },
       });
     }

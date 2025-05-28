@@ -419,7 +419,7 @@ export const revalidateCourseDetails = async (courseId: string) => {
 
   if (!course) throw new Error("Course not found");
 
-  revalidatePath(`/courses/details/${course.slug}`);
+  revalidatePath(`/platform/courses/details/${course.slug}`);
 };
 
 type UpdateCourseStatusPayload = {

@@ -19,7 +19,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
     (purchasedCourse) => purchasedCourse.id === course.id
   );
 
-  if (!isPurchased) return redirect(`/courses/details/${slug}`);
+  if (!isPurchased) return redirect(`/platform/courses/details/${slug}`);
 
   const { completedLessons } = await getCourseProgress(slug);
 
@@ -41,7 +41,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
   if (lessonToRedirect) {
     redirect(
-      `/courses/${slug}/${lessonToRedirect.moduleId}/lesson/${lessonToRedirect.id}`
+      `/platform/courses/${slug}/${lessonToRedirect.moduleId}/lesson/${lessonToRedirect.id}`
     );
   }
 

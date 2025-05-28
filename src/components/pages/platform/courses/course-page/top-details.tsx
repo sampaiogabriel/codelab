@@ -33,7 +33,7 @@ export const TopDetails = ({ course }: TopDetailsProps) => {
 
       <div className="flex items-center gap-2 text-xs sm:text-sm">
         <Link
-          href={`platform/courses/details/${course.slug}`}
+          href={`/platform/courses/details/${course.slug}`}
           className="font-semibold hover:text-primary transition-all line-clamp-1"
         >
           {course.title}

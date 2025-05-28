@@ -47,7 +47,7 @@ export const LessonPlayer = ({ lesson, nextLesson }: LessonPlayerProps) => {
     }
 
     router.push(
-      `/courses/${courseSlug}/${nextLesson.moduleId}/lesson/${nextLesson.id}`
+      `/platform/courses/${courseSlug}/${nextLesson.moduleId}/lesson/${nextLesson.id}`
     );
   };
 

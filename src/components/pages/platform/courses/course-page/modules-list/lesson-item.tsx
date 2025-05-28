@@ -60,7 +60,7 @@ export const LessonItem = ({ lesson }: LessonItemProps) => {
         lesson.id === currentLessonId && "text-white",
         completed && "text-primary"
       )}
-      href={`platform/courses/${courseSlug}/${lesson.moduleId}/lesson/${lesson.id}`}
+      href={`/platform/courses/${courseSlug}/${lesson.moduleId}/lesson/${lesson.id}`}
     >
       <Tooltip
         content={

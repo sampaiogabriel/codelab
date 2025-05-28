@@ -107,7 +107,7 @@ export const CreditCardForm = ({
 
       await new Promise((resolve) => setTimeout(resolve, 4000));
 
-      router.push(`/courses/${course.slug}`);
+      router.push(`/platform/courses/${course.slug}`);
     },
     onError: (error) => {
       if (error?.name === "NOT_AUTHORIZED") {

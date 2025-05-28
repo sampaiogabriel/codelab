@@ -17,7 +17,7 @@ export const AdminCommentItem = ({ comment }: AdminCommentItemProps) => {
 
   return (
     <Link
-      href={`platform/courses/${course.slug}/${lessonModule.id}/lesson/${lesson.id}`}
+      href={`/platform/courses/${course.slug}/${lessonModule.id}/lesson/${lesson.id}`}
       className={cn(
         "flex items-center justify-between gap-4 p-3 bg-muted rounded-lg border",
         "border-muted transition-all hover:border-primary flex-col md:flex-row"
