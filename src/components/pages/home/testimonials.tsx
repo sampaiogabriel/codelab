@@ -46,9 +46,9 @@ const TestimonialsSection: FC = () => {
       id="testimonials"
       className="w-full bg-foreground min-h-screen flex flex-col justify-center items-center"
     >
-      <div className="w-full max-w-7xl mx-auto flex flex-col justify-center items-center">
+      <div className="w-full max-w-7xl p-10 md:p-0 mx-auto flex flex-col justify-center items-center">
         <TextAnimate
-          className="text-4xl sm:text-5xl font-bold text-center text-black"
+          className="text-4xl mt-8 md:mt-0 sm:text-5xl font-bold text-center text-black"
           animation="blurInUp"
           once
           as="h1"
