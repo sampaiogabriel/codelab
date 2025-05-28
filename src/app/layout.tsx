@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito, DM_Sans } from "next/font/google";
+import { Nunito } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ptBR } from "@clerk/localizations";
@@ -14,11 +14,6 @@ import "@/styles/clerk.css";
 
 const nunito = Nunito({
   variable: "--font-sans",
-  subsets: ["latin"],
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm",
   subsets: ["latin"],
 });
 
@@ -48,11 +43,7 @@ export default function RootLayout({
     >
       <html lang="pt-BR" suppressHydrationWarning>
         <body
-          className={cn(
-            nunito.variable,
-            dmSans.variable,
-            "antialiased font-dm font-sans dark"
-          )}
+          className={cn(nunito.variable, "antialiased font-dm font-sans dark")}
         >
           <ClientProviders>{children}</ClientProviders>
         </body>
