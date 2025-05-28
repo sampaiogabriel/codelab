@@ -170,7 +170,7 @@ export const CourseForm = ({ initialData }: CourseFormProps) => {
       },
       onSuccess: () => {
         toast.success("Curso atualizado com sucesso!");
-        router.push("/admin/courses");
+        router.push("/platform/admin/courses");
       },
       onError: (error) => {
         console.error(error);
@@ -185,7 +185,7 @@ export const CourseForm = ({ initialData }: CourseFormProps) => {
       mutationFn: createCourse,
       onSuccess: () => {
         toast.success("Curso criado com sucesso!");
-        router.push("/admin/courses");
+        router.push("/platform/admin/courses");
       },
       onError: (error) => {
         console.error(error);

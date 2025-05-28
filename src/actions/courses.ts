@@ -218,7 +218,7 @@ export const createCourse = async (rawData: CreateCourseFormData) => {
     },
   });
 
-  revalidatePath("/admin/courses");
+  revalidatePath("/platform/admin/courses");
 
   return course;
 };
@@ -287,8 +287,8 @@ export const updateCourse = async (rawData: UpdateCourseFormData) => {
     },
   });
 
-  revalidatePath("/");
-  revalidatePath("/admin/courses");
+  revalidatePath("/platform");
+  revalidatePath("/platform/admin/courses");
 
   return updatedCourse;
 };
@@ -440,8 +440,8 @@ export const updateCourseStatus = async ({
     data: { status },
   });
 
-  revalidatePath("/");
-  revalidatePath("/admin/courses");
+  revalidatePath("/platform");
+  revalidatePath("/platform/admin/courses");
 
   return course;
 };
@@ -463,6 +463,6 @@ export const deleteCourse = async (courseId: string) => {
 
   await deleteFile(course.thumbnail);
 
-  revalidatePath("/");
-  revalidatePath("/admin/courses");
+  revalidatePath("/platform");
+  revalidatePath("/platform/admin/courses");
 };
