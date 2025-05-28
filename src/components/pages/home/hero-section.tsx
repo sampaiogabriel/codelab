@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import LampadaGif from "@/assets/lampada.gif";
+import { BlurFade } from "@/components/magicui/blur-fade";
 
 const HeroSection: FC = () => {
   return (
@@ -33,12 +34,14 @@ const HeroSection: FC = () => {
           </TextAnimate>
 
           <div className="m-6">
-            <Link href="/platform">
-              <Button className="relative rounded-full text-white" size="lg">
-                Escolha seu curso e comece agora
-                <ChevronRight />
-              </Button>
-            </Link>
+            <BlurFade>
+              <Link href="/platform">
+                <Button className="relative rounded-full text-white" size="lg">
+                  Escolha seu curso e comece agora
+                  <ChevronRight />
+                </Button>
+              </Link>
+            </BlurFade>
           </div>
           <div className="w-full max-w-[800px] md:mt-[-100px]">
             <Image src={LampadaGif} alt="lightbump" unoptimized />
